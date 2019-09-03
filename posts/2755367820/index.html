@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="准备环境安装git for windows此处省略……GitHub创建个人博客仓库首先需要拥有一个GitHub帐号进入GitHub注册新建仓库创建一个和你用户名相同的仓库，后面加.github.io，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。安装Node.jsNode.js官网 https://nodejs.org 下载对应平台的安装程序在Windows上安装时">
+<meta name="keywords" content="GitHub,Hexo,免费博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用GitHub和Hexo搭建免费个人博客">
+<meta property="og:url" content="https://doranbai.github.io/posts/2755367820/index.html">
+<meta property="og:site_name" content="Doran Bai">
+<meta property="og:description" content="准备环境安装git for windows此处省略……GitHub创建个人博客仓库首先需要拥有一个GitHub帐号进入GitHub注册新建仓库创建一个和你用户名相同的仓库，后面加.github.io，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。安装Node.jsNode.js官网 https://nodejs.org 下载对应平台的安装程序在Windows上安装时">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/githubpages.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/nodejs%E5%AE%89%E8%A3%85.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/node-v%E5%91%BD%E4%BB%A4.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/npm-v%E5%91%BD%E4%BB%A4.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/hexo--version%E5%91%BD%E4%BB%A4.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/hexo-init%E5%91%BD%E4%BB%A4.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/npminstall.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/mulu.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/hexog.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/hexos.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/configgit.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/2755367820/hexo-deployer-git.png">
+<meta property="og:updated_time" content="2019-09-03T09:31:26.176Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用GitHub和Hexo搭建免费个人博客">
+<meta name="twitter:description" content="准备环境安装git for windows此处省略……GitHub创建个人博客仓库首先需要拥有一个GitHub帐号进入GitHub注册新建仓库创建一个和你用户名相同的仓库，后面加.github.io，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。安装Node.jsNode.js官网 https://nodejs.org 下载对应平台的安装程序在Windows上安装时">
+<meta name="twitter:image" content="https://doranbai.github.io/posts/2755367820/githubpages.png">
+  <link rel="canonical" href="https://doranbai.github.io/posts/2755367820/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>使用GitHub和Hexo搭建免费个人博客 | Doran Bai</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Doran Bai</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://doranbai.github.io/posts/2755367820/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Doran Bai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doran Bai">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">使用GitHub和Hexo搭建免费个人博客
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-02 19:20:24" itemprop="dateCreated datePublished" datetime="2019-09-02T19:20:24+08:00">2019-09-02</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-03 17:31:26" itemprop="dateModified" datetime="2019-09-03T17:31:26+08:00">2019-09-03</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BlogTips/" itemprop="url" rel="index"><span itemprop="name">BlogTips</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><h3 id="安装git-for-windows"><a href="#安装git-for-windows" class="headerlink" title="安装git for windows"></a>安装git for windows</h3><p>此处省略……</p><h3 id="GitHub创建个人博客仓库"><a href="#GitHub创建个人博客仓库" class="headerlink" title="GitHub创建个人博客仓库"></a>GitHub创建个人博客仓库</h3><h4 id="首先需要拥有一个GitHub帐号"><a href="#首先需要拥有一个GitHub帐号" class="headerlink" title="首先需要拥有一个GitHub帐号"></a>首先需要拥有一个GitHub帐号</h4><p>进入<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>注册</p><h4 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h4><p>创建一个和你用户名相同的仓库，后面加.github.io，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。<br><img src="/posts/2755367820/githubpages.png" alt="GitHub Pages"></p><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p><a href="https://nodejs.org" target="_blank" rel="noopener">Node.js官网</a> <a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a> 下载对应平台的安装程序<br>在Windows上安装时务必选择全部组件，包括勾选Add to Path<br><img src="/posts/2755367820/nodejs%E5%AE%89%E8%A3%85.png" alt="nodejs安装配置"><br>安装完毕后，请打开git bash。<br>输入<code>node -v</code></p><a id="more"></a>
+
+
+
+<p><img src="/posts/2755367820/node-v%E5%91%BD%E4%BB%A4.png" alt="node-v命令"></p>
+<p>输入<code>npm-v</code></p>
+<p><img src="/posts/2755367820/npm-v%E5%91%BD%E4%BB%A4.png" alt="npm-v命令"></p>
+<p>如果能够正确的显示出版本号，证明安装成功！</p>
+<p>npm是Node.js的包管理工具（package manager）。通过npm，用户可以方便的获取和使用第三方包，如hexo。</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在git bash中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>用<code>hexo --version</code>查看一下版本</p>
+<p><img src="/posts/2755367820/hexo--version%E5%91%BD%E4%BB%A4.png" alt="hexo --version命令"></p>
+<p>至此，环境安装完成</p>
+<h2 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h2><h3 id="首先创建自己的博客文件夹"><a href="#首先创建自己的博客文件夹" class="headerlink" title="首先创建自己的博客文件夹"></a>首先创建自己的博客文件夹</h3><p>如D:\blog，打开git bash进入该目录，使用<code>hexo init</code>初始化博客</p>
+<p><img src="/posts/2755367820/hexo-init%E5%91%BD%E4%BB%A4.png" alt="hexo init命令"></p>
+<p>初始化的过程是从 hexo 仓库下载博客的目录结构和文件，需要一定时间。</p>
+<h3 id="安装依赖模块"><a href="#安装依赖模块" class="headerlink" title="安装依赖模块"></a>安装依赖模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p><img src="/posts/2755367820/npminstall.png" alt="npm install命令"><br>安装完成后，我们查看一下目前的目录结构</p>
+<p><img src="/posts/2755367820/mulu.png" alt="目录结构"></p>
+<h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><p><code>hexo generate</code>或<code>hexo g</code></p>
+<p><img src="/posts/2755367820/hexog.png" alt="hexo generate命令"></p>
+<h3 id="本地验证。"><a href="#本地验证。" class="headerlink" title="本地验证。"></a>本地验证。</h3><p>命令行（即Git Bash）输入以下命令，运行即可：<code>hexo server</code>或<code>hexo s</code><br><img src="/posts/2755367820/hexos.png" alt="hexo server命令"><br>打开浏览器访问网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>至此，您的Hexo博客已经搭建在本地。使用ctrl+c可以把服务关掉。</p>
+<h2 id="推送博客"><a href="#推送博客" class="headerlink" title="推送博客"></a>推送博客</h2><h3 id="修改-config-yml文件，增加以下内容"><a href="#修改-config-yml文件，增加以下内容" class="headerlink" title="修改_config.yml文件，增加以下内容"></a>修改_config.yml文件，增加以下内容</h3><p>repo需要配置为自己的地址</p>
+<p><img src="/posts/2755367820/configgit.png" alt="配置自己的git"></p>
+<h3 id="安装git-插件"><a href="#安装git-插件" class="headerlink" title="安装git 插件"></a>安装git 插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p><img src="/posts/2755367820/hexo-deployer-git.png" alt="hexo-deployer-git"></p>
+<h3 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h3><p><code>hexo deploy</code>或<code>hexo d</code><br>现在可以打开你的个人博客了<a href="https://doranbai.github.io/">https://doranbai.github.io/</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            
+              <a href="/tags/免费博客/" rel="tag"># 免费博客</a>
+            
+          </div>
+        
+
+        
+
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备环境"><span class="nav-number">1.</span> <span class="nav-text">准备环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git-for-windows"><span class="nav-number">1.1.</span> <span class="nav-text">安装git for windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub创建个人博客仓库"><span class="nav-number">1.2.</span> <span class="nav-text">GitHub创建个人博客仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#首先需要拥有一个GitHub帐号"><span class="nav-number">1.2.1.</span> <span class="nav-text">首先需要拥有一个GitHub帐号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建仓库"><span class="nav-number">1.2.2.</span> <span class="nav-text">新建仓库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">1.3.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.4.</span> <span class="nav-text">安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建博客"><span class="nav-number">2.</span> <span class="nav-text">创建博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首先创建自己的博客文件夹"><span class="nav-number">2.1.</span> <span class="nav-text">首先创建自己的博客文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖模块"><span class="nav-number">2.2.</span> <span class="nav-text">安装依赖模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态页面"><span class="nav-number">2.3.</span> <span class="nav-text">生成静态页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地验证。"><span class="nav-number">2.4.</span> <span class="nav-text">本地验证。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推送博客"><span class="nav-number">3.</span> <span class="nav-text">推送博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-config-yml文件，增加以下内容"><span class="nav-number">3.1.</span> <span class="nav-text">修改_config.yml文件，增加以下内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git-插件"><span class="nav-number">3.2.</span> <span class="nav-text">安装git 插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送"><span class="nav-number">3.3.</span> <span class="nav-text">推送</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Doran Bai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/doranbai" title="GitHub &rarr; https://github.com/doranbai" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:doranbai@163.com" title="E-Mail &rarr; mailto:doranbai@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doran Bai</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

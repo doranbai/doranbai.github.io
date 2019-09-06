@@ -11,8 +11,7 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 3.9.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-pen.png?v=7.4.0">
   <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
 
 <link rel="stylesheet" href="/css/main.css?v=7.4.0">
@@ -29,8 +28,8 @@
     version: '7.4.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -43,8 +42,8 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: '复制',
@@ -60,7 +59,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用GitHub和Hexo搭建免费个人博客">
 <meta property="og:url" content="https://doranbai.github.io/posts/2755367820/index.html">
-<meta property="og:site_name" content="Doran Bai">
+<meta property="og:site_name" content="Doran Bai&#39;s blog">
 <meta property="og:description" content="准备环境安装git for windows此处省略……GitHub创建个人博客仓库首先需要拥有一个GitHub帐号进入GitHub注册新建仓库创建一个和你用户名相同的仓库，后面加.github.io，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。安装Node.jsNode.js官网 https://nodejs.org 下载对应平台的安装程序在Windows上安装时">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://doranbai.github.io/posts/2755367820/githubpages.png">
@@ -75,7 +74,7 @@
 <meta property="og:image" content="https://doranbai.github.io/posts/2755367820/hexos.png">
 <meta property="og:image" content="https://doranbai.github.io/posts/2755367820/configgit.png">
 <meta property="og:image" content="https://doranbai.github.io/posts/2755367820/hexo-deployer-git.png">
-<meta property="og:updated_time" content="2019-09-03T09:31:26.176Z">
+<meta property="og:updated_time" content="2019-09-05T07:14:10.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用GitHub和Hexo搭建免费个人博客">
 <meta name="twitter:description" content="准备环境安装git for windows此处省略……GitHub创建个人博客仓库首先需要拥有一个GitHub帐号进入GitHub注册新建仓库创建一个和你用户名相同的仓库，后面加.github.io，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。安装Node.jsNode.js官网 https://nodejs.org 下载对应平台的安装程序在Windows上安装时">
@@ -94,7 +93,7 @@
   };
 </script>
 
-  <title>使用GitHub和Hexo搭建免费个人博客 | Doran Bai</title>
+  <title>使用GitHub和Hexo搭建免费个人博客 | Doran Bai's blog</title>
   
 
 
@@ -141,7 +140,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Doran Bai</span>
+        <span class="site-title">Doran Bai's blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -215,9 +214,36 @@
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -251,13 +277,13 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doran Bai">
+      <meta itemprop="name" content="Doran Bai's blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">使用GitHub和Hexo搭建免费个人博客
+        <h2 class="post-title" itemprop="name headline">使用GitHub和Hexo搭建免费个人博客
 
           
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -281,7 +307,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-03 17:31:26" itemprop="dateModified" datetime="2019-09-03T17:31:26+08:00">2019-09-03</time>
+                <time title="修改时间：2019-09-05 15:14:10" itemprop="dateModified" datetime="2019-09-05T15:14:10+08:00">2019-09-05</time>
               </span>
             
           
@@ -300,6 +326,35 @@
           
 
           
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>833</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -310,7 +365,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><h3 id="安装git-for-windows"><a href="#安装git-for-windows" class="headerlink" title="安装git for windows"></a>安装git for windows</h3><p>此处省略……</p><h3 id="GitHub创建个人博客仓库"><a href="#GitHub创建个人博客仓库" class="headerlink" title="GitHub创建个人博客仓库"></a>GitHub创建个人博客仓库</h3><h4 id="首先需要拥有一个GitHub帐号"><a href="#首先需要拥有一个GitHub帐号" class="headerlink" title="首先需要拥有一个GitHub帐号"></a>首先需要拥有一个GitHub帐号</h4><p>进入<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>注册</p><h4 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h4><p>创建一个和你用户名相同的仓库，后面加.github.io，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。<br><img src="/posts/2755367820/githubpages.png" alt="GitHub Pages"></p><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p><a href="https://nodejs.org" target="_blank" rel="noopener">Node.js官网</a> <a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a> 下载对应平台的安装程序<br>在Windows上安装时务必选择全部组件，包括勾选Add to Path<br><img src="/posts/2755367820/nodejs%E5%AE%89%E8%A3%85.png" alt="nodejs安装配置"><br>安装完毕后，请打开git bash。<br>输入<code>node -v</code></p><a id="more"></a>
+        <h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><h3 id="安装git-for-windows"><a href="#安装git-for-windows" class="headerlink" title="安装git for windows"></a>安装git for windows</h3><p>此处省略……</p><h3 id="GitHub创建个人博客仓库"><a href="#GitHub创建个人博客仓库" class="headerlink" title="GitHub创建个人博客仓库"></a>GitHub创建个人博客仓库</h3><h4 id="首先需要拥有一个GitHub帐号"><a href="#首先需要拥有一个GitHub帐号" class="headerlink" title="首先需要拥有一个GitHub帐号"></a>首先需要拥有一个GitHub帐号</h4><p>进入<a href="https://github.com/" target="_blank" rel="external nofollow noopener">GitHub</a>注册</p><h4 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h4><p>创建一个和你用户名相同的仓库，后面加.github.io，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。<br><img src="/posts/2755367820/githubpages.png" alt="GitHub Pages"></p><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p><a href="https://nodejs.org" target="_blank" rel="external nofollow noopener">Node.js官网</a> <a href="https://nodejs.org" target="_blank" rel="external nofollow noopener">https://nodejs.org</a> 下载对应平台的安装程序<br>在Windows上安装时务必选择全部组件，包括勾选Add to Path<br><img src="/posts/2755367820/nodejs%E5%AE%89%E8%A3%85.png" alt="nodejs安装配置"><br>安装完毕后，请打开git bash。<br>输入<code>node -v</code></p><a id="more"></a>
 
 
 
@@ -334,7 +389,7 @@
 <p><img src="/posts/2755367820/mulu.png" alt="目录结构"></p>
 <h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><p><code>hexo generate</code>或<code>hexo g</code></p>
 <p><img src="/posts/2755367820/hexog.png" alt="hexo generate命令"></p>
-<h3 id="本地验证。"><a href="#本地验证。" class="headerlink" title="本地验证。"></a>本地验证。</h3><p>命令行（即Git Bash）输入以下命令，运行即可：<code>hexo server</code>或<code>hexo s</code><br><img src="/posts/2755367820/hexos.png" alt="hexo server命令"><br>打开浏览器访问网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br>至此，您的Hexo博客已经搭建在本地。使用ctrl+c可以把服务关掉。</p>
+<h3 id="本地验证。"><a href="#本地验证。" class="headerlink" title="本地验证。"></a>本地验证。</h3><p>命令行（即Git Bash）输入以下命令，运行即可：<code>hexo server</code>或<code>hexo s</code><br><img src="/posts/2755367820/hexos.png" alt="hexo server命令"><br>打开浏览器访问网址： <a href="http://localhost:4000/" target="_blank" rel="external nofollow noopener">http://localhost:4000/</a><br>至此，您的Hexo博客已经搭建在本地。使用ctrl+c可以把服务关掉。</p>
 <h2 id="推送博客"><a href="#推送博客" class="headerlink" title="推送博客"></a>推送博客</h2><h3 id="修改-config-yml文件，增加以下内容"><a href="#修改-config-yml文件，增加以下内容" class="headerlink" title="修改_config.yml文件，增加以下内容"></a>修改_config.yml文件，增加以下内容</h3><p>repo需要配置为自己的地址</p>
 <p><img src="/posts/2755367820/configgit.png" alt="配置自己的git"></p>
 <h3 id="安装git-插件"><a href="#安装git-插件" class="headerlink" title="安装git 插件"></a>安装git 插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
@@ -349,6 +404,33 @@
     
         
       
+        <div id="reward-container">
+  <div>赏几nitaimei毛</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+  </div>
+</div>
+
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Doran Bai</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://doranbai.github.io/posts/2755367820/" title="使用GitHub和Hexo搭建免费个人博客">https://doranbai.github.io/posts/2755367820/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="external nofollow noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+</ul>
+</div>
+
+      
 
       <footer class="post-footer">
           
@@ -356,17 +438,33 @@
           
           <div class="post-tags">
             
-              <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+              <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
             
-              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
             
-              <a href="/tags/免费博客/" rel="tag"># 免费博客</a>
+              <a href="/tags/免费博客/" rel="tag"><i class="fa fa-tag"></i> 免费博客</a>
             
           </div>
         
 
         
 
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/posts/894459533/" rel="prev" title="Hexo详细配置与使用">
+                  Hexo详细配置与使用 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
       </footer>
     
   </div>
@@ -380,6 +478,13 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjUxOC8yMzAyOA=="></div>
+  </div>
+  
+  
 
         </div>
           
@@ -426,7 +531,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -452,7 +557,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -467,7 +572,7 @@
       
         
       
-        <a href="https://github.com/doranbai" title="GitHub &rarr; https://github.com/doranbai" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/doranbai" title="GitHub &rarr; https://github.com/doranbai" rel="external nofollow noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
     
       <span class="links-of-author-item">
@@ -478,7 +583,7 @@
       
         
       
-        <a href="mailto:doranbai@163.com" title="E-Mail &rarr; mailto:doranbai@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:doranbai@163.com" title="E-Mail &rarr; mailto:doranbai@163.com" rel="external nofollow noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
   </div>
@@ -497,17 +602,43 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Doran Bai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">14k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">13 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.0</div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
 
 
 
@@ -538,6 +669,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -545,6 +685,8 @@
 
 
 
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
 
 
 
@@ -564,6 +706,20 @@
   
 
   
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
 
 </body>
 </html>

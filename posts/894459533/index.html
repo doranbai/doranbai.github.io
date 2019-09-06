@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-pen.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="前面我们成功部署了博客，但是界面太粗糙了。现在我们要开始Hexo详细配置与使用。Hexo博客配置文件就在博客根目录下_config.ymlHexo博客文件结构##博客基础信息配置1234567891011121314# Sitetitle:       # 博客名字subtitle:    # 子标题description: # 网站描述，可以写一句话author:      # 作者名字lang">
+<meta name="keywords" content="GitHub,Hexo,免费博客,NexT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo详细配置与使用">
+<meta property="og:url" content="https://doranbai.github.io/posts/894459533/index.html">
+<meta property="og:site_name" content="Doran Bai&#39;s blog">
+<meta property="og:description" content="前面我们成功部署了博客，但是界面太粗糙了。现在我们要开始Hexo详细配置与使用。Hexo博客配置文件就在博客根目录下_config.ymlHexo博客文件结构##博客基础信息配置1234567891011121314# Sitetitle:       # 博客名字subtitle:    # 子标题description: # 网站描述，可以写一句话author:      # 作者名字lang">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://doranbai.github.io/posts/894459533/themeconfig.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/894459533/configasset.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/894459533/hexo-asset-image.png">
+<meta property="og:image" content="https://doranbai.github.io/posts/894459533/skiprender.png">
+<meta property="og:updated_time" content="2019-09-05T13:28:09.424Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo详细配置与使用">
+<meta name="twitter:description" content="前面我们成功部署了博客，但是界面太粗糙了。现在我们要开始Hexo详细配置与使用。Hexo博客配置文件就在博客根目录下_config.ymlHexo博客文件结构##博客基础信息配置1234567891011121314# Sitetitle:       # 博客名字subtitle:    # 子标题description: # 网站描述，可以写一句话author:      # 作者名字lang">
+<meta name="twitter:image" content="https://doranbai.github.io/posts/894459533/themeconfig.png">
+  <link rel="canonical" href="https://doranbai.github.io/posts/894459533/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Hexo详细配置与使用 | Doran Bai's blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Doran Bai's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://doranbai.github.io/posts/894459533/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Doran Bai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doran Bai's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">Hexo详细配置与使用
+
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-03 18:05:41" itemprop="dateCreated datePublished" datetime="2019-09-03T18:05:41+08:00">2019-09-03</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-05 21:28:09" itemprop="dateModified" datetime="2019-09-05T21:28:09+08:00">2019-09-05</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BlogTips/" itemprop="url" rel="index"><span itemprop="name">BlogTips</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>2.9k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>前面我们成功部署了博客，但是界面太粗糙了。现在我们要开始Hexo详细配置与使用。<br>Hexo博客配置文件就在博客根目录下_config.yml</p><h2 id="Hexo博客文件结构"><a href="#Hexo博客文件结构" class="headerlink" title="Hexo博客文件结构"></a>Hexo博客文件结构</h2><p>##博客基础信息配置</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span>       <span class="comment"># 博客名字</span></span><br><span class="line"><span class="attr">subtitle:</span>    <span class="comment"># 子标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="comment"># 网站描述，可以写一句话</span></span><br><span class="line"><span class="attr">author:</span>      <span class="comment"># 作者名字</span></span><br><span class="line"><span class="attr">language:</span>    <span class="comment"># 语言zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span>    <span class="comment"># 时区，不填写默认使用您计算机设置的时区，可以设置Asia/Shanghai</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span>  <span class="attr">http://yoursite.com</span>              <span class="comment"># 博客链接，如https://doranbai.github.io/，这个需要修改</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span>                                <span class="comment"># 博客根目录，可以不修改</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>   <span class="comment"># 文章的永久链接格式，可以不用修改</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                    <span class="comment"># 永久链接中各部分的默认值，可以不用修改</span></span><br></pre></td></tr></table></figure><a id="more"></a>
+
+
+
+<p>如果需要做链接持久化，需要做一些修改，链接持久化的内容在后面。</p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>Hexo默认的主题为landscape主题。如果你觉得不好看，那么可以在Hexo官网<a href="https://hexo.io/themes/" target="_blank" rel="external nofollow noopener">https://hexo.io/themes/</a>的主题中，选择你喜欢的一个主题进行修改。这里我们已人气较高的NexT主题为例<br>首先我们需要下载主题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 你的博客目录</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>下载完成后，更改更改站点配置文件_config.yml 的theme字段，为主题文件夹的名称<br><img src="/posts/894459533/themeconfig.png" alt="主题配置"><br>有关NexT主题的详细配置，请参考我的下一篇文章,<a href="https://doranbai.github.io/posts/1188489975/">Hexo主题NexT详细配置</a></p>
+<h2 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h2><p>可以执行下列命令来创建一篇新文章或者新的页面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"title名字"</span></span><br></pre></td></tr></table></figure>
+
+<p>你会看到输出<code>INFO  Created:</code>的输出，同时在 <code>source/_post</code> 文件夹下多了所创建的.md文件。Hexo支持的是Markdown语法。<br>打开你的md文件，你会看到以下类似的内容，这些是 front-matter</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: titile名字</span><br><span class="line">date: 2019-08-21 10:42:16</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>接着在后面添加你的内容。之后用<code>hexo g</code>和<code>hexo s</code>，然后打开<code>http://localhost:4000/</code>就可以在本地进行预览了。如果没有问题就可以用<code>hexo d</code>推送到GitHub上。</p>
+<h2 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h2><p>如果你想在文章中增加图片，那么需要按照以下步骤进行配置</p>
+<ul>
+<li>修改博客目录下的_config.yml<br><img src="/posts/894459533/configasset.png" alt="修改post_asset_folder"></li>
+<li>创建新的文章<br><code>hexo new &quot;title名字&quot;</code><br>这次会在同级的目录下生成一个同名的文件夹，这样就可以把与该文章相关的所有资源都放到此文件夹内，可以更方便的使用资源。</li>
+<li>下载图片上传插件<br>打开Git Bash，执行以下命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 你的博客目录</span><br><span class="line">npm install hexo-asset-image --save。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="/posts/894459533/hexo-asset-image.png" alt="修改hexo-asset-image"></p>
+<ul>
+<li>在Markdown引用图片<br>将所需要的图片资源放到同名文件夹之后，使用 markdown 语法插入相对路径的图片<br><code>![图片描述](目录名/图片名)</code><br>最后使用<code>hexo clean</code> -&gt; <code>hexo generate</code> -&gt; <code>hexo deploy</code> 将本地博客推送到远程，即可看到文章中的图片。</li>
+</ul>
+<h2 id="增加README-md"><a href="#增加README-md" class="headerlink" title="增加README.md"></a>增加README.md</h2><p>GitHub仓库中我们一般都会增加README.md文件，用于添加一些描述信息。<br>由于hexo默认会把所有source文件夹的md文件都转换成public文件夹的html。所以，如果我们直接在source文件夹中添加README.md,会被Hexo转换为README.html，所以我们需要修改配置</p>
+<p>打开博客目录下的_config.yml 文件，找到 skip_render<br>skip_render 一般有以下四种常用参数：</p>
+<ul>
+<li><p>跳过source目录下的 test.html: <code>skip_render: test.html</code></p>
+</li>
+<li><p>跳过source目录下 test 文件夹内所有文件：<code>skip_render: test/*</code></p>
+</li>
+<li><p>跳过source目录下 test 文件夹内所有文件包括子文件夹以及子文件夹内的文件：<code>skip_render: test/**</code></p>
+</li>
+<li><p>跳过多个路径：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line"><span class="bullet"> -</span> <span class="string">test.html</span></span><br><span class="line"><span class="bullet"> -</span> <span class="string">test/*</span></span><br></pre></td></tr></table></figure>
+
+<p>所以如果我们想要跳过source目录下README.md只需要按以下配置即可</p>
+</li>
+</ul>
+<p><img src="/posts/894459533/skiprender.png" alt="README配置"></p>
+<h2 id="链接持久化"><a href="#链接持久化" class="headerlink" title="链接持久化"></a>链接持久化</h2><p>在Hexo的默认配置中，生成的链接都是类似于<code>aaa.bb.com/2019/09/01/文章名</code>这种类型的链接。这种链接是根据文章生成的时间年、月、日和标题确定的。<br>这个配置是在博客配置文件_config.yml中</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br></pre></td></tr></table></figure>
+
+<p>如果博客的创建时间或者名字不小心改变了，那么原来的链接就会失效。所以这就是链接持久化的意义。在博客目录下执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，修改博客配置文件config.yml，修改并增加以下内容</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span>   <span class="comment">#posts可以换成你想换的名字</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line"><span class="attr">  alg:</span> <span class="string">crc32</span>  <span class="comment">#support crc16(default) and crc32，可以配置为crc16或者crc32</span></span><br><span class="line"><span class="attr">  rep:</span> <span class="string">dec</span>    <span class="comment">#support dec(default) and hex，可以配置为dec或者hex</span></span><br></pre></td></tr></table></figure>
+
+<p>产生的链接类似下面的格式</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+
+<p>配置完成完后，在md文件的Front-matter 内会增加abbrlink 字段，值为生成的ID 。这个字段不会随着创建日期date或标题title的修改而改变,从而使得链接地址持久化。</p>
+<h2 id="博客备份"><a href="#博客备份" class="headerlink" title="博客备份"></a>博客备份</h2>
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div>赏几nitaimei毛</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+  </div>
+</div>
+
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Doran Bai</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://doranbai.github.io/posts/894459533/" title="Hexo详细配置与使用">https://doranbai.github.io/posts/894459533/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="external nofollow noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
+            
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+            
+              <a href="/tags/免费博客/" rel="tag"><i class="fa fa-tag"></i> 免费博客</a>
+            
+              <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/posts/2755367820/" rel="next" title="使用GitHub和Hexo搭建免费个人博客">
+                  <i class="fa fa-chevron-left"></i> 使用GitHub和Hexo搭建免费个人博客
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/posts/1188489975/" rel="prev" title="Hexo主题NexT详细配置">
+                  Hexo主题NexT详细配置 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjUxOC8yMzAyOA=="></div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo博客文件结构"><span class="nav-number">1.</span> <span class="nav-text">Hexo博客文件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更换主题"><span class="nav-number">2.</span> <span class="nav-text">更换主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建博客"><span class="nav-number">3.</span> <span class="nav-text">创建博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片插入"><span class="nav-number">4.</span> <span class="nav-text">图片插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加README-md"><span class="nav-number">5.</span> <span class="nav-text">增加README.md</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接持久化"><span class="nav-number">6.</span> <span class="nav-text">链接持久化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博客备份"><span class="nav-number">7.</span> <span class="nav-text">博客备份</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Doran Bai</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/doranbai" title="GitHub &rarr; https://github.com/doranbai" rel="external nofollow noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:doranbai@163.com" title="E-Mail &rarr; mailto:doranbai@163.com" rel="external nofollow noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doran Bai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">14k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">13 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+</body>
+</html>

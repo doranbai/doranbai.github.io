@@ -11,8 +11,7 @@
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 3.9.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-pen.png?v=7.4.0">
   <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
 
 <link rel="stylesheet" href="/css/main.css?v=7.4.0">
@@ -29,8 +28,8 @@
     version: '7.4.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -43,8 +42,8 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: '复制',
@@ -55,13 +54,14 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Doran Bai">
+  <meta name="keywords" content="编程 软件">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Doran Bai&#39;s blog">
 <meta property="og:url" content="https://doranbai.github.io/index.html">
-<meta property="og:site_name" content="Doran Bai">
+<meta property="og:site_name" content="Doran Bai&#39;s blog">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Doran Bai">
+<meta name="twitter:title" content="Doran Bai&#39;s blog">
   <link rel="canonical" href="https://doranbai.github.io/">
 
 
@@ -76,7 +76,7 @@
   };
 </script>
 
-  <title>Doran Bai</title>
+  <title>Doran Bai's blog</title>
   
 
 
@@ -123,7 +123,7 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Doran Bai</span>
+        <span class="site-title">Doran Bai's blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -197,9 +197,36 @@
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -223,6 +250,252 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://doranbai.github.io/posts/1188489975/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Doran Bai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doran Bai's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/posts/1188489975/" class="post-title-link" itemprop="url">Hexo主题NexT详细配置</a>
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-03 20:13:38" itemprop="dateCreated datePublished" datetime="2019-09-03T20:13:38+08:00">2019-09-03</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-06 16:43:36" itemprop="dateModified" datetime="2019-09-06T16:43:36+08:00">2019-09-06</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BlogTips/" itemprop="url" rel="index"><span itemprop="name">BlogTips</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>11k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>10 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>前面我们将Hexo的主题修改为了Next，下面我们会介绍基于Next主题(7.4.0版本)的详细配置</p><h2 id="需要的配置文件"><a href="#需要的配置文件" class="headerlink" title="需要的配置文件"></a>需要的配置文件</h2><p>在Hexo和NexT主题中总共有2份主要的配置文件，其名称都是_config.yml。 其中，一份位于博客根目录下，主要包含 Hexo 本身的配置；另一份位于themes/next/目录下，用于配置主题相关的选项。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/1188489975/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://doranbai.github.io/posts/894459533/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Doran Bai">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doran Bai's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            
+            <a href="/posts/894459533/" class="post-title-link" itemprop="url">Hexo详细配置与使用</a>
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-03 18:05:41" itemprop="dateCreated datePublished" datetime="2019-09-03T18:05:41+08:00">2019-09-03</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-05 21:28:09" itemprop="dateModified" datetime="2019-09-05T21:28:09+08:00">2019-09-05</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/BlogTips/" itemprop="url" rel="index"><span itemprop="name">BlogTips</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>2.9k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>前面我们成功部署了博客，但是界面太粗糙了。现在我们要开始Hexo详细配置与使用。<br>Hexo博客配置文件就在博客根目录下_config.yml</p><h2 id="Hexo博客文件结构"><a href="#Hexo博客文件结构" class="headerlink" title="Hexo博客文件结构"></a>Hexo博客文件结构</h2><p>##博客基础信息配置</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span>       <span class="comment"># 博客名字</span></span><br><span class="line"><span class="attr">subtitle:</span>    <span class="comment"># 子标题</span></span><br><span class="line"><span class="attr">description:</span> <span class="comment"># 网站描述，可以写一句话</span></span><br><span class="line"><span class="attr">author:</span>      <span class="comment"># 作者名字</span></span><br><span class="line"><span class="attr">language:</span>    <span class="comment"># 语言zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span>    <span class="comment"># 时区，不填写默认使用您计算机设置的时区，可以设置Asia/Shanghai</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span>  <span class="attr">http://yoursite.com</span>              <span class="comment"># 博客链接，如https://doranbai.github.io/，这个需要修改</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span>                                <span class="comment"># 博客根目录，可以不修改</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>   <span class="comment"># 文章的永久链接格式，可以不用修改</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                    <span class="comment"># 永久链接中各部分的默认值，可以不用修改</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/posts/894459533/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://doranbai.github.io/posts/2755367820/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -232,14 +505,14 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Doran Bai">
+      <meta itemprop="name" content="Doran Bai's blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
             
             <a href="/posts/2755367820/" class="post-title-link" itemprop="url">使用GitHub和Hexo搭建免费个人博客</a>
           
-        </h1>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -263,7 +536,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-03 17:31:26" itemprop="dateModified" datetime="2019-09-03T17:31:26+08:00">2019-09-03</time>
+                <time title="修改时间：2019-09-05 15:14:10" itemprop="dateModified" datetime="2019-09-05T15:14:10+08:00">2019-09-05</time>
               </span>
             
           
@@ -282,6 +555,27 @@
           
 
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>833</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -292,7 +586,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><h3 id="安装git-for-windows"><a href="#安装git-for-windows" class="headerlink" title="安装git for windows"></a>安装git for windows</h3><p>此处省略……</p><h3 id="GitHub创建个人博客仓库"><a href="#GitHub创建个人博客仓库" class="headerlink" title="GitHub创建个人博客仓库"></a>GitHub创建个人博客仓库</h3><h4 id="首先需要拥有一个GitHub帐号"><a href="#首先需要拥有一个GitHub帐号" class="headerlink" title="首先需要拥有一个GitHub帐号"></a>首先需要拥有一个GitHub帐号</h4><p>进入<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>注册</p><h4 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h4><p>创建一个和你用户名相同的仓库，后面加.github.io，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。<br><img src="/posts/2755367820/githubpages.png" alt="GitHub Pages"></p><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p><a href="https://nodejs.org" target="_blank" rel="noopener">Node.js官网</a> <a href="https://nodejs.org" target="_blank" rel="noopener">https://nodejs.org</a> 下载对应平台的安装程序<br>在Windows上安装时务必选择全部组件，包括勾选Add to Path<br><img src="/posts/2755367820/nodejs%E5%AE%89%E8%A3%85.png" alt="nodejs安装配置"><br>安装完毕后，请打开git bash。<br>输入<code>node -v</code></p>
+          <h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><h3 id="安装git-for-windows"><a href="#安装git-for-windows" class="headerlink" title="安装git for windows"></a>安装git for windows</h3><p>此处省略……</p><h3 id="GitHub创建个人博客仓库"><a href="#GitHub创建个人博客仓库" class="headerlink" title="GitHub创建个人博客仓库"></a>GitHub创建个人博客仓库</h3><h4 id="首先需要拥有一个GitHub帐号"><a href="#首先需要拥有一个GitHub帐号" class="headerlink" title="首先需要拥有一个GitHub帐号"></a>首先需要拥有一个GitHub帐号</h4><p>进入<a href="https://github.com/" target="_blank" rel="external nofollow noopener">GitHub</a>注册</p><h4 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h4><p>创建一个和你用户名相同的仓库，后面加.github.io，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。<br><img src="/posts/2755367820/githubpages.png" alt="GitHub Pages"></p><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p><a href="https://nodejs.org" target="_blank" rel="external nofollow noopener">Node.js官网</a> <a href="https://nodejs.org" target="_blank" rel="external nofollow noopener">https://nodejs.org</a> 下载对应平台的安装程序<br>在Windows上安装时务必选择全部组件，包括勾选Add to Path<br><img src="/posts/2755367820/nodejs%E5%AE%89%E8%A3%85.png" alt="nodejs安装配置"><br>安装完毕后，请打开git bash。<br>输入<code>node -v</code></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -366,7 +660,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -392,7 +686,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -407,7 +701,7 @@
       
         
       
-        <a href="https://github.com/doranbai" title="GitHub &rarr; https://github.com/doranbai" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/doranbai" title="GitHub &rarr; https://github.com/doranbai" rel="external nofollow noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
     
       <span class="links-of-author-item">
@@ -418,7 +712,7 @@
       
         
       
-        <a href="mailto:doranbai@163.com" title="E-Mail &rarr; mailto:doranbai@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:doranbai@163.com" title="E-Mail &rarr; mailto:doranbai@163.com" rel="external nofollow noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
   </div>
@@ -437,17 +731,43 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Doran Bai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">14k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">13 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.0</div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
 
 
 
@@ -478,6 +798,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -485,6 +814,8 @@
 
 
 
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
 
 
 
@@ -504,6 +835,7 @@
   
 
   
+
 
 </body>
 </html>
